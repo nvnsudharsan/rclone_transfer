@@ -21,12 +21,12 @@ VARIABLES=(
     # Add or remove as needed
 )
 
-SRC_BASE="/scratch/09295/naveens/hindcast"
-DST_BASE="levante:/work/kc0592/archiving/graphcast"
-LOG_DIR="$HOME/rclone_levante_logs"
+SRC_BASE="base_dir"
+DST_BASE="remote_dir"
+LOG_DIR="$HOME/rclone_logs"
 
 # rclone tuning
-TRANSFERS=15
+TRANSFERS=16
 CHECKERS=16
 MULTI_THREAD_STREAMS=4
 MULTI_THREAD_CUTOFF="250M"
@@ -110,7 +110,7 @@ ELAPSED=$((OVERALL_END - OVERALL_START))
 
 echo ""
 echo "================================================"
-echo "ALL TRANSFERS DONE"
+echo "ALL TRANSFERS DONE."
 echo "================================================"
 echo "Total wall time: $((ELAPSED / 3600))h $(( (ELAPSED % 3600) / 60 ))m"
 echo "Jobs completed: $((JOB_NUM - ${#FAILED_JOBS[@]})) / $TOTAL_JOBS"
